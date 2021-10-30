@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router ,Route, Switch } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Navbar from './components/Navbar/Navbar';
+import Game from "./components/Game/Game";
+import Calculator from './components/Calculator/Calculator';
+import Feed from './components/Feed/Feed';
+
+const App = () => {
+    return (
+        <Router>
+            <Navbar />
+            <Switch>
+                <Route exact path="/game"><Game/></Route>
+                <Route exact path="/calculator"><Calculator/></Route>
+                <Route exact path="/feed"><Feed pageSize={100}/></Route>
+            </Switch>
+        </Router>
+    );
 }
 
 export default App;

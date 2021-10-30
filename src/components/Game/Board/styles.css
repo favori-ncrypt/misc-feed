@@ -1,0 +1,17 @@
+ol, ul {
+    padding-left: 30px;
+  }
+  
+  .board-row {
+    display: block;
+  }
+  
+  .board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  
+  .status {
+    margin-bottom: 10px;
+  }
